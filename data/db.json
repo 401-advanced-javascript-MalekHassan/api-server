@@ -1,0 +1,42 @@
+{
+  "categories": [
+    {
+      "category": "furnitures",
+      "display_name": "woody table",
+      "description": "nice table",
+      "_id": "utj6nrp",
+      "name": "table"
+    },
+    {},
+    {
+      "category": "glass",
+      "display_name": "glass door",
+      "description": "nice glass door",
+      "_id": "sPbYrN3",
+      "name": "door"
+    }
+  ],
+  "products": [
+    {
+      "category": "furniture",
+      "display_name": "woody chair",
+      "description": "nice chair",
+      "_id": "bPhUISn",
+      "name": "chair"
+    },
+    {
+      "category": "furniture",
+      "display_name": "glass chair",
+      "description": "nice glassy chair",
+      "_id": "EPGpCGG"
+    },
+    {
+      "name": "waal",
+      "category": "block",
+      "description": "hard wall",
+      "price": 3,
+      "inStock": 0,
+      "_id": "A1KhXEK"
+    }
+  ]
+}
