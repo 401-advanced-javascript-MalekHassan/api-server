@@ -36,11 +36,9 @@ git clone https://github.com/401-advanced-javascript-MalekHassan/api-server.git
 json-server --id=_id --watch data/db.json --routes routes/routes.json
 ```
 
-## Architecture
+## Documentation
 
-This application was build with Node.js and it includes:
-
-- minimist package
+https://app.swaggerhub.com/apis/MalekHassan/lab-06/0.1
 
 ## Change Log
 
