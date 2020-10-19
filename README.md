@@ -26,19 +26,17 @@ These instructions will get you a copy of the project up and running on your loc
 
 2. Clone the repo
 
-git clone https://github.com/401-advanced-javascript-MalekHassan/notes.git
+git clone https://github.com/401-advanced-javascript-MalekHassan/api-server.git
 
 ## Usage
 
-1. add note:
-   node index.js --add or -a 'note content'
-
-## Architecture
-
-This application was build with Node.js and it includes:
-
-- minimist package
+```cmd
+npm i supertest
+npm i jest
+npm i express
+dotenv
+```
 
 ## Change Log
 
-11-10-2020 6:15pm - you can add a note.
+19-10-2020 9:25pm - you can add a note.
