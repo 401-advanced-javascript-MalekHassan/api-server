@@ -30,16 +30,13 @@ git clone https://github.com/401-advanced-javascript-MalekHassan/api-server.git
 
 ## Usage
 
-1. add note:
-
 ```cmd
-json-server --id=_id --watch data/db.json --routes routes/routes.json
+npm i supertest
+npm i jest
+npm i express
+dotenv
 ```
-
-## Documentation
-
-https://app.swaggerhub.com/apis/MalekHassan/lab-06/0.1
 
 ## Change Log
 
-18-10-2020 3:25pm - you can add a note.
+19-10-2020 9:25pm - you can add a note.
