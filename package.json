@@ -8,10 +8,12 @@
     "lib": "lib"
   },
   "dependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "init": "^0.1.2",
     "jest": "^26.5.3",
+    "mongoose": "^5.10.9",
     "supertest": "^5.0.0"
   },
   "devDependencies": {},
@@ -30,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/401-advanced-javascript-MalekHassan/api-server/issues"
   },
-  "homepage": "https://github.com/401-advanced-javascript-MalekHassan/api-server#readme"
+  "homepage": "https://github.com/401-advanced-javascript-MalekHassan/api-server#readme",
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
