@@ -19,7 +19,7 @@ describe('Products models', () => {
     return proModel.create(obj).then((record) => {
       return proModel.get().then((results) => {
         Object.keys(obj).forEach((element) => {
-          expect(results[element]).toBe(obj[element]);
+          expect(results[0][element]).toBe(obj[element]);
         });
       });
     });
@@ -33,11 +33,11 @@ describe('Products models', () => {
   });
   it('should respond properly on PUT request to /products', () => {
     return proModel.create(obj).then((record) => {
-      console.log('kkkkk', record._id);
-      return proModel.update(record._id).then(() => {
+      // console.log('kkkkk', record._id);
+      return proModel.update(record._id, newObj).then(() => {
         return proModel.get(record._id).then((resultse) => {
           Object.keys(obj).forEach((element) => {
-            expect(resultse[element]).toBe(newObj[element]);
+            expect(resultse[0][element]).toBe(newObj[element]);
           });
         });
       });

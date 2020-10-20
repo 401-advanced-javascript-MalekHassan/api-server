@@ -78,12 +78,12 @@ describe('api server', () => {
       .post('/categories')
       .send(obj)
       .then((data) => {
-        console.log('lllll', data.body);
+        // console.log('lllll', data.body);
         return mockRequest
           .delete(`/categories/${data.body.results._id}`)
           .send(newObj)
           .then((results) => {
-            console.log('hhhhhhhhhhhhhh', results);
+            // console.log('hhhhhhhhhhhhhh', results);
             expect(results.status).toBe(200);
             Object.keys(obj).forEach((element) => {
               expect(results.body.results[element]).toBe(obj[element]);
@@ -142,12 +142,12 @@ describe('api server', () => {
       .post('/products')
       .send(obj)
       .then((data) => {
-        console.log('lllll', data.body);
+        // console.log('lllll', data.body);
         return mockRequest
           .delete(`/products/${data.body.results._id}`)
           .send(newObj)
           .then((results) => {
-            console.log('hhhhhhhhhhhhhh', results);
+            // console.log('hhhhhhhhhhhhhh', results);
             expect(results.status).toBe(200);
             Object.keys(obj).forEach((element) => {
               expect(results.body.results[element]).toBe(obj[element]);
