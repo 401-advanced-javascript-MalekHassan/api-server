@@ -13,11 +13,6 @@ let newObj = {
   description: 'nice tooth',
 };
 describe('api server', () => {
-  it('should respond with 500 on an error', () => {
-    mockRequest.get('/bad').then((results) => {
-      expect(results.status).toBe(500);
-    });
-  });
   it('should respond with 404 on a wrong route', () => {
     return mockRequest.get('/foo').then((results) => {
       expect(results.status).toBe(404);
@@ -39,7 +34,7 @@ describe('api server', () => {
     return mockRequest
       .post('/categories')
       .send(obj)
-      .then((data) => {
+      .then(() => {
         return mockRequest
           .post(`/categories`)
           .send(newObj)
@@ -93,6 +88,11 @@ describe('api server', () => {
     // .catch(console.error);
   });
 
+  it('should respond with 500 on an error', () => {
+    mockRequest.get('/bad').then((results) => {
+      expect(results.status).toBe(500);
+    });
+  });
   it('should respond properly on GET request to /products', () => {
     return mockRequest.get('/products').then((results) => {
       expect(results.status).toBe(200);
@@ -103,7 +103,7 @@ describe('api server', () => {
     return mockRequest
       .post('/products')
       .send(obj)
-      .then((data) => {
+      .then(() => {
         return mockRequest
           .post(`/products`)
           .send(newObj)
