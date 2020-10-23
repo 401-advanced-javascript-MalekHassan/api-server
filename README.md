@@ -37,6 +37,14 @@ npm i express
 dotenv
 ```
 
+## Architecture
+
+This application was build with Node.js and it includes:
+
+# UML diagram
+
+![UML](./assets/UMLlab7.jpg)
+
 ## Change Log
 
-19-10-2020 9:25pm - you can add a note.
+23-10-2020 11:25pm - you can add a note.
