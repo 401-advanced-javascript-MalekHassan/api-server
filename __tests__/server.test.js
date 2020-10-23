@@ -39,7 +39,7 @@ describe('api server', () => {
     return mockRequest
       .post('/categories')
       .send(obj)
-      .then((data) => {
+      .then(() => {
         return mockRequest
           .post(`/categories`)
           .send(newObj)
@@ -103,7 +103,7 @@ describe('api server', () => {
     return mockRequest
       .post('/products')
       .send(obj)
-      .then((data) => {
+      .then(() => {
         return mockRequest
           .post(`/products`)
           .send(newObj)

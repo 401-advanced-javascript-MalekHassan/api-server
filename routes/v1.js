@@ -1,11 +1,18 @@
 'use strict';
 
 const express = require('express');
-const categoriesModle = require('../lib/models/catigories/categories.collection');
 const router = express.Router();
+const modelFinder = require('../lib/middleware/modelfinder');
 
-router.post('/categories', (req, res, next) => {
-  categoriesModle
+router.param('model', modelFinder);
+
+router.post('/:model', posting);
+router.get('/:model', getAll);
+router.put('/:model/:id', putting);
+router.delete('/:model/:id', deleting);
+
+function posting(req, res, next) {
+  req.model
     .create(req.body)
     .then((data) => {
       let count = data.length;
@@ -13,18 +20,18 @@ router.post('/categories', (req, res, next) => {
       res.status(200).json({ count, results });
     })
     .catch(next);
-});
-router.get('/categories', (req, res) => {
-  categoriesModle.get().then((data) => {
+}
+function getAll(req, res) {
+  req.model.get().then((data) => {
     let count = data.length;
     let results = data;
     res.status(200).json({ count, results });
   });
   // .catch(next);
-});
+}
 
-router.put('/categories/:id', (req, res, next) => {
-  categoriesModle
+function putting(req, res, next) {
+  req.model
     .update(req.params.id, req.body)
     .then((data) => {
       let count = data.length;
@@ -32,16 +39,16 @@ router.put('/categories/:id', (req, res, next) => {
       res.status(200).json({ count, results });
     })
     .catch(next);
-});
+}
 
-router.delete('/categories/:id', (req, res, next) => {
-  categoriesModle
+function deleting(req, res, next) {
+  req.model
     .delete(req.params.id)
     .then((data) => {
       let results = data;
       res.status(200).json({ results });
     })
     .catch(next);
-});
+}
 
 module.exports = router;
