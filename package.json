@@ -8,17 +8,20 @@
     "lib": "lib"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
+    "eslint": "^7.11.0",
     "express": "^4.17.1",
     "init": "^0.1.2",
-    "jest": "^26.5.3",
+    "jest": "^26.6.1",
     "supertest": "^5.0.0"
   },
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "jest --coverage --verbose"
+    "test": "jest --verbose --coverage",
+    "lint": "eslint index.js lib/ __tests__/ "
   },
   "repository": {
     "type": "git",
