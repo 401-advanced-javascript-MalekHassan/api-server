@@ -48,7 +48,7 @@ This application was build with Node.js and it includes:
 
 # UML diagram
 
-![UML](./assets/UMLlab8.jpg)
+![UML](./assets/UML.PNG)
 
 ## Change Log
 
