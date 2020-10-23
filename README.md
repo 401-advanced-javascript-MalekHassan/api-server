@@ -1,10 +1,11 @@
-# api-server
+# Dynamic API Server
 
-Author:Malek Hassan Hasan Al-Dalal'ah
+**Author**: Malek Hassan Hasan Al-Dalal'ah
+**Version**: 1.0.0
 
 ## Overview
 
-Build a simple API (with no code) to gain some clarity and visuals on proper route structure and the data contracts. We will use a product called ‘json-server’ to build a simple API server
+BAn Express/Node.js based server designed to be a “model agnostic” REST API server, which can perform CRUD operations on any data model.
 
 ## Prerequisites
 
@@ -34,9 +35,21 @@ git clone https://github.com/401-advanced-javascript-MalekHassan/api-server.git
 npm i supertest
 npm i jest
 npm i express
+npm i mongoose
+npm i init
 dotenv
 ```
 
+- [swagger](https://inspector.swagger.io/builder)
+
+## Architecture
+
+This application was build with Node.js and it includes:
+
+# UML diagram
+
+![UML](./assets/UML.PNG)
+
 ## Change Log
 
-19-10-2020 9:25pm - you can add a note.
+23-10-2020 9:25pm - you can add a note.
