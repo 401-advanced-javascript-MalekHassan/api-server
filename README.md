@@ -40,6 +40,14 @@ json-server --id=_id --watch data/db.json --routes routes/routes.json
 
 https://app.swaggerhub.com/apis/MalekHassan/lab-06/0.1
 
+## Architecture
+
+This application was build with Node.js and it includes:
+
+# UML diagram
+
+![UML](./assets/class06.jpg)
+
 ## Change Log
 
 18-10-2020 3:25pm - you can add a note.
