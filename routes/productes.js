@@ -25,6 +25,26 @@ router.get('/products', (req, res, next) => {
     .catch(next);
 });
 
+router.get('/products/:id', (req, res) => {
+  productsModle.get(req.params.id).then((data) => {
+    let count = data.length;
+    let results = data;
+    res.status(200).json({ count, results });
+  });
+  // .catch(next);
+});
+
+router.patch('/products/:id', (req, res, next) => {
+  productsModle
+    .update(req.params.id, req.body)
+    .then((data) => {
+      let count = data.length;
+      let results = data;
+      res.status(200).json({ count, results });
+    })
+    .catch(next);
+});
+
 router.put('/products/:id', (req, res, next) => {
   productsModle
     .update(req.params.id, req.body)
