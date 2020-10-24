@@ -9,6 +9,7 @@ router.param('model', modelFinder);
 router.post('/:model', posting);
 router.get('/:model', getAll);
 router.put('/:model/:id', putting);
+router.patch('/:model/:id', Patchputting);
 router.delete('/:model/:id', deleting);
 
 function posting(req, res, next) {
@@ -31,6 +32,17 @@ function getAll(req, res) {
 }
 
 function putting(req, res, next) {
+  req.model
+    .update(req.params.id, req.body)
+    .then((data) => {
+      let count = data.length;
+      let results = data;
+      res.status(200).json({ count, results });
+    })
+    .catch(next);
+}
+
+function Patchputting(req, res, next) {
   req.model
     .update(req.params.id, req.body)
     .then((data) => {
