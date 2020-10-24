@@ -8,6 +8,7 @@ router.param('model', modelFinder);
 
 router.post('/:model', posting);
 router.get('/:model', getAll);
+router.get('/:model/:id', getId);
 router.put('/:model/:id', putting);
 router.patch('/:model/:id', Patchputting);
 router.delete('/:model/:id', deleting);
@@ -22,8 +23,19 @@ function posting(req, res, next) {
     })
     .catch(next);
 }
+
 function getAll(req, res) {
   req.model.get().then((data) => {
+    let count = data.length;
+    let results = data;
+    res.status(200).json({ count, results });
+  });
+  // .catch(next);
+}
+
+function getId(req, res) {
+  console.log(req.params.id);
+  req.model.get(req.params.id).then((data) => {
     let count = data.length;
     let results = data;
     res.status(200).json({ count, results });
