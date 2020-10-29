@@ -68,6 +68,26 @@ describe('api server', () => {
     // .catch(console.error);
   });
 
+  it('should respond properly on PATCH request to /categories', () => {
+    return mockRequest
+      .post('/categories')
+      .send(obj)
+      .then((data) => {
+        // console.log('lllll', data.body);
+        return mockRequest
+          .patch(`/categories/${data.body.results._id}`)
+          .send(newObj)
+          .then((results) => {
+            // console.log('hhhhhhhhhhhhhh', results);
+            expect(results.status).toBe(200);
+            Object.keys(newObj).forEach((element) => {
+              expect(results.body.results[element]).toBe(newObj[element]);
+            });
+          });
+      });
+    // .catch(console.error);
+  });
+
   it('should respond properly on DELETE request to /categories', () => {
     return mockRequest
       .post('/categories')
@@ -125,6 +145,26 @@ describe('api server', () => {
         // console.log('lllll', data.body);
         return mockRequest
           .put(`/products/${data.body.results._id}`)
+          .send(newObj)
+          .then((results) => {
+            // console.log('hhhhhhhhhhhhhh', results);
+            expect(results.status).toBe(200);
+            Object.keys(newObj).forEach((element) => {
+              expect(results.body.results[element]).toBe(newObj[element]);
+            });
+          });
+      });
+    // .catch(console.error);
+  });
+
+  it('should respond properly on PATCH request to /products', () => {
+    return mockRequest
+      .post('/products')
+      .send(obj)
+      .then((data) => {
+        // console.log('lllll', data.body);
+        return mockRequest
+          .patch(`/products/${data.body.results._id}`)
           .send(newObj)
           .then((results) => {
             // console.log('hhhhhhhhhhhhhh', results);

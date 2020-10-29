@@ -43,6 +43,18 @@ describe('Products models', () => {
       });
     });
   });
+  it('should respond properly on PATCH request to /products', () => {
+    return proModel.create(obj).then((record) => {
+      // console.log('kkkkk', record._id);
+      return proModel.update(record._id, newObj).then(() => {
+        return proModel.get(record._id).then((resultse) => {
+          Object.keys(obj).forEach((element) => {
+            expect(resultse[0][element]).toBe(newObj[element]);
+          });
+        });
+      });
+    });
+  });
   it('should respond properly on GET request to /products', () => {
     return proModel.create(obj).then((record) => {
       return proModel.delete(record._id).then((results) => {
@@ -72,6 +84,18 @@ describe('categories models', () => {
     });
   });
   it('should respond properly on PUT request to /categories', () => {
+    return cateModel.create(obj).then((record) => {
+      // console.log('kkkkk', record._id);
+      return cateModel.update(record._id, newObj).then(() => {
+        return cateModel.get(record._id).then((resultse) => {
+          Object.keys(obj).forEach((element) => {
+            expect(resultse[0][element]).toBe(newObj[element]);
+          });
+        });
+      });
+    });
+  });
+  it('should respond properly on PATCH request to /categories', () => {
     return cateModel.create(obj).then((record) => {
       // console.log('kkkkk', record._id);
       return cateModel.update(record._id, newObj).then(() => {
