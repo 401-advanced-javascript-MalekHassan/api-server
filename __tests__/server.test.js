@@ -1,6 +1,5 @@
 'use strict';
 const { server } = require('../lib/server');
-const kkkk = require('../lib/models/mongo');
 const supergoose = require('@code-fellows/supergoose');
 const mockRequest = supergoose(server);
 let obj = {
